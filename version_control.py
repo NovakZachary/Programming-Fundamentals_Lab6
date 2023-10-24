@@ -1,6 +1,7 @@
 
 
 def encode(password):
+    # Zachary Novak
     result = ''
     for i in password:
         result += str((int(i) + 3) if (int(i) <= 6) else (int(i)+3-10))
