@@ -1,4 +1,12 @@
-
+def decode(password):
+    # Will Crowell
+    result = ''
+    for i in password:
+        if int(i) <= 2:
+            result += str(int(i)+7)
+        else:
+            result += str(int(i) - 3)
+    return result
 
 def encode(password):
     # Zachary Novak
@@ -17,9 +25,13 @@ def main():
         print_menu()
         match int(input()):
             case 1:
-                print("Encoded password: ", encode(input("Enter password to encode: ")))
+                # I changed this part because we need to capture the input to use for decoding in case 2
+                print("Please enter your password to encode:", end="")
+                encoded_password = encode(input())
+                print("Your password has been encoded and stored!")
             case 2:
-                pass  # TODO PUT CALL TO DECODE METHOD HERE
+                # William Crowell
+                print(f'The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.')
             case 3:
                 break
 
